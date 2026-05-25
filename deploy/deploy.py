@@ -130,7 +130,7 @@ def _get_ec2_client(main_args):
 
 def _get_run_args(main_args, instances_tag_data, ec2_name=None):
     master_user_data = None
-    security_groups = ['ssh-http-https']
+    security_groups = SECURITY_GROUPS
     iam_role = 'regulome-instance'
     count = 1
     data_insert = {
@@ -207,7 +207,7 @@ def create_instance(ec2_client, main_args, ec2_name):
         MinCount=run_args['count'],
         MaxCount=run_args['count'],
         InstanceType=main_args.instance_type,
-        SecurityGroups=run_args['security_groups'],
+        SecurityGroupsIds=run_args['security_groups'],
         UserData=run_args['user_data'],
         BlockDeviceMappings=bdm,
         InstanceInitiatedShutdownBehavior='terminate',
