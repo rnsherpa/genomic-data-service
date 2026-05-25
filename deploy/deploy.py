@@ -207,7 +207,7 @@ def create_instance(ec2_client, main_args, ec2_name):
         MinCount=run_args['count'],
         MaxCount=run_args['count'],
         InstanceType=main_args.instance_type,
-        SecurityGroupsIds=run_args['security_groups'],
+        SecurityGroupIds=run_args['security_groups'],
         UserData=run_args['user_data'],
         BlockDeviceMappings=bdm,
         InstanceInitiatedShutdownBehavior='terminate',
