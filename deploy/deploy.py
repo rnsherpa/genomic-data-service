@@ -16,8 +16,8 @@ DEMO_MACHINE = 'demo'
 MAIN_MACHINE = 'gds'
 REGULOME_ES_MACHINE = 'regulome_es'
 ENCODE_ES_MACHINE = 'encode_es'
-VPC_ID = 'vpc-b7ab4ed1'
-SECURITY_GROUPS = ['sg-03506766d1d93e1e7']
+VPC_ID = 'vpc-0fb7997b2d08a6b58'
+SECURITY_GROUPS = ['sg-06b55c8b0273a358d']
 
 
 def nameify(in_str):
@@ -90,7 +90,7 @@ def get_user_data(commit, config_file, data_insert, main_args):
         auth_base=auth_base,
         auth_type=auth_type,
     )
-    data_insert['S3_AUTH_KEYS'] = auth_keys_dir
+    data_insert['S3_AUTH_KEYS'] = ''
     data_insert['REDIS_PORT'] = main_args.redis_port
     data_insert['DEMO_INDEXER_USER'] = DEMO_INDEXER_USER
     data_insert['DEMO_INDEXER_PASSWORD'] = DEMO_INDEXER_PASSWORD
@@ -122,7 +122,7 @@ def _get_instances_tag_data(main_args, ec2_name=None):
 
 def _get_ec2_client(main_args):
     session = boto3.Session(
-        region_name='us-west-2', profile_name=main_args.profile_name
+        region_name='us-east-2', profile_name=main_args.profile_name
     )
     ec2 = session.resource('ec2')
     return ec2
