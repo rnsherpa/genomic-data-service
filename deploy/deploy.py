@@ -348,7 +348,7 @@ def parse_args():
     )
     parser.add_argument(
         '--git-repo',
-        default='https://github.com/ENCODE-DCC/genomic-data-service.git',
+        default='https://github.com/rnsherpa/genomic-data-service.git',
         help='Git repo to checkout branches: https://github.com/{user|org}/{repo}.git',
     )
     parser.add_argument('--demo', action='store_true',
