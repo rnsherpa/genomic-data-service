@@ -344,7 +344,7 @@ def parse_args():
         help='Size of disk. Allowed values 120, 200, and 500',
     )
     parser.add_argument(
-        '--availability-zone', default='us-west-2a', help='Set EC2 availabilty zone'
+        '--availability-zone', default='us-east-2a', help='Set EC2 availabilty zone'
     )
     parser.add_argument(
         '--git-repo',
