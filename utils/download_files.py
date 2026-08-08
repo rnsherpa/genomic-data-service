@@ -1,7 +1,7 @@
 import boto3
 from pathlib import Path
 
-BUCKET_NAME = 'regulome-ml-models'
+BUCKET_NAME = 'regulome-ml-models-178707647236-us-east-2-an'
 OBJECT_NAMES = ['rf_model1.0.1.sav', 'TURF_tissueSp_scores_table.pkl', 'bigwig_files/IC_matched_max.bw',
                 'bigwig_files/IC_max.bw', 'bigwig_files/IC_matched_max_GRCh38.bw', 'bigwig_files/IC_max_GRCh38.bw', 'two_bit_files/hg38.2bit', 'two_bit_files/hg19.2bit']
 LOCAL_DIR = Path('./ml_models/')
@@ -43,7 +43,7 @@ def models_to_download(paths_to_check):
 
 
 def download_models(needs_downloading):
-    s3 = boto3.client('s3')
+    s3 = boto3.client('s3', region_name='us-east-2')
     for file_ in needs_downloading:
         with open(file_, 'wb+') as f:
             print('Downloading ' + str(file_) + ' ...')

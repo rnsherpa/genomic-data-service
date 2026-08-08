@@ -59,14 +59,15 @@ REGDB_NUM_SCORES = [
     100,
 ]
 
+BUCKET_URL = 'https://regulome-ml-models-178707647236-us-east-2-an.s3.us-east-2.amazonaws.com'
 FILE_IC_MATCHED_MAX_HG19_PATH_LOCAL = './ml_models/bigwig_files/IC_matched_max.bw'
 FILE_IC_MAX_HG19_PATH_LOCAL = './ml_models/bigwig_files/IC_max.bw'
-FILE_IC_MATCHED_MAX_HG19_PATH_REMOTE = 'https://regulome-ml-models.s3.amazonaws.com/bigwig_files/IC_matched_max.bw'
-FILE_IC_MAX_HG19_PATH_REMOTE = 'https://regulome-ml-models.s3.amazonaws.com/bigwig_files/IC_max.bw'
+FILE_IC_MATCHED_MAX_HG19_PATH_REMOTE = f'{BUCKET_URL}/bigwig_files/IC_matched_max.bw'
+FILE_IC_MAX_HG19_PATH_REMOTE = f'{BUCKET_URL}/bigwig_files/IC_max.bw'
 FILE_IC_MATCHED_MAX_GRCH38_PATH_LOCAL = './ml_models/bigwig_files/IC_matched_max_GRCh38.bw'
 FILE_IC_MAX_GRCH38_PATH_LOCAL = './ml_models/bigwig_files/IC_max_GRCh38.bw'
-FILE_IC_MATCHED_MAX_GRCH38_PATH_REMOTE = 'https://regulome-ml-models.s3.amazonaws.com/bigwig_files/IC_matched_max_GRCh38.bw'
-FILE_IC_MAX_GRCH38_PATH_REMOTE = 'https://regulome-ml-models.s3.amazonaws.com/bigwig_files/IC_max_GRCh38.bw'
+FILE_IC_MATCHED_MAX_GRCH38_PATH_REMOTE = f'{BUCKET_URL}/bigwig_files/IC_matched_max_GRCh38.bw'
+FILE_IC_MAX_GRCH38_PATH_REMOTE = f'{BUCKET_URL}/bigwig_files/IC_max_GRCh38.bw'
 
 
 def get_bigwig_file(file_path_local, file_path_remote):
