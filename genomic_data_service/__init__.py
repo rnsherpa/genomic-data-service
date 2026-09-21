@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, make_response
 from os import environ
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 from genomic_data_service.searches.configs import add_registry
 from genomic_data_service.rnaseq.client import add_rna_client
@@ -12,6 +13,10 @@ def is_web_app():
 
 
 app = Flask(__name__)
+app.wsgi_app = ProxyFix(
+        app.wsgi_app,
+        x_proto=1,
+)
 app.register_blueprint(rnaget_api)
 logging.basicConfig(level=logging.NOTSET)
 
