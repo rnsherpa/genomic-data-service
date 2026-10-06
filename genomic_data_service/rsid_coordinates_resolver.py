@@ -87,7 +87,7 @@ def get_variants_from_catalog(region_queries, source='bravo_af', maf=0.01):
                         'chrom': variant['chr'],
                         'start': variant['pos'],
                         'end': variant['pos'] + 1,
-                        'rsids': variant['rsid'],
+                        'rsids': variant['rsid'] or [],
                         'ref': variant['ref'],
                         'alt': variant['alt'],
                         'hgvs': variant['hgvs'],
